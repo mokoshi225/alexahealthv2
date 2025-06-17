@@ -1,0 +1,84 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "症状記録",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "SymptomIntent",
+          "slots": [
+            {
+              "name": "symptomStrength",
+              "type": "SymptomStrengthType"
+            }
+          ],
+          "samples": [
+            "{symptomStrength}"
+          ]
+        },
+        {
+          "name": "NewSymptomIntent",
+          "slots": [
+            {
+              "name": "newSymptom",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "症状 {newSymptom}",
+            "{newSymptom} を教えて"
+          ]
+        },
+        {
+          "name": "NewSymptomStrengthIntent",
+          "slots": [
+            {
+              "name": "symptomStrength",
+              "type": "SymptomStrengthType"
+            }
+          ],
+          "samples": [
+            "{symptomStrength}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "SymptomStrengthType",
+          "values": [
+            {
+              "name": {
+                "value": "強い"
+              }
+            },
+            {
+              "name": {
+                "value": "少し"
+              }
+            },
+            {
+              "name": {
+                "value": "無い"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
