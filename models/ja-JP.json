@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "症状記録",
+      "invocationName": "今日の症状",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -16,7 +16,7 @@
           "samples": []
         },
         {
-          "name": "AMAZON.NavigateHomeIntent",
+          "name": "AMAZON.FallbackIntent",
           "samples": []
         },
         {
@@ -28,7 +28,49 @@
             }
           ],
           "samples": [
-            "{symptomStrength}"
+            "{symptomStrength}",
+            "はい {symptomStrength} です",
+            "{symptomStrength} です",
+            "それは {symptomStrength} です",
+            "あります",
+            "ありません"
+          ]
+        },
+        {
+          "name": "RecordSymptomIntent",
+          "slots": [
+            {
+              "name": "newSymptom",
+              "type": "SymptomType"
+            },
+            {
+              "name": "symptomStrength",
+              "type": "SymptomStrengthType"
+            }
+          ],
+          "samples": [
+            "{newSymptom} を記録してください",
+            "{newSymptom} を {symptomStrength} で記録してください",
+            "症状を記録したい",
+            "{newSymptom} を記録して",
+            "{symptomStrength} で記録してください"
+          ]
+        },
+        {
+          "name": "UpdateSymptomStrengthIntent",
+          "slots": [
+            {
+              "name": "newSymptom",
+              "type": "SymptomType"
+            },
+            {
+              "name": "symptomStrength",
+              "type": "SymptomStrengthType"
+            }
+          ],
+          "samples": [
+            "{newSymptom} の強度を {symptomStrength} に更新して",
+            "{newSymptom} の強度を更新して"
           ]
         },
         {
@@ -36,12 +78,15 @@
           "slots": [
             {
               "name": "newSymptom",
-              "type": "AMAZON.SearchQuery"
+              "type": "SymptomType"
             }
           ],
           "samples": [
-            "症状 {newSymptom}",
-            "{newSymptom} を教えて"
+            "新しい症状は {newSymptom} です",
+            "{newSymptom} という症状があります",
+            "症状は {newSymptom} です",
+            "他に {newSymptom} があります",
+            "{newSymptom} について記録したい"
           ]
         },
         {
@@ -53,7 +98,12 @@
             }
           ],
           "samples": [
-            "{symptomStrength}"
+            "{symptomStrength} です",
+            "それは {symptomStrength} です",
+            "はい {symptomStrength} です",
+            "強いです",
+            "少しです",
+            "ありません"
           ]
         }
       ],
@@ -76,6 +126,25 @@
                 "value": "無い"
               }
             }
+          ]
+        },
+        {
+          "name": "SymptomType",
+          "values": [
+            { "name": { "value": "発熱" } },
+            { "name": { "value": "めまい" } },
+            { "name": { "value": "倦怠感" } },
+            { "name": { "value": "吐き気" } },
+            { "name": { "value": "頭痛" } },
+            { "name": { "value": "咳" } },
+            { "name": { "value": "鼻水" } },
+            { "name": { "value": "喉の痛み" } },
+            { "name": { "value": "関節痛" } },
+            { "name": { "value": "筋肉痛" } },
+            { "name": { "value": "食欲不振" } },
+            { "name": { "value": "下痢" } },
+            { "name": { "value": "便秘" } },
+            { "name": { "value": "不眠" } }
           ]
         }
       ]
