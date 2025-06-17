@@ -78,13 +78,15 @@
           "slots": [
             {
               "name": "newSymptom",
-              "type": "SymptomType"
+              "type": "AMAZON.SearchQuery"
             }
           ],
           "samples": [
+            "{newSymptom} です",
+            "{newSymptom} と言います",
             "新しい症状は {newSymptom} です",
-            "{newSymptom} という症状があります",
             "症状は {newSymptom} です",
+            "{newSymptom} という症状があります",
             "他に {newSymptom} があります",
             "{newSymptom} について記録したい"
           ]
